@@ -2,18 +2,16 @@ import { getAuth } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import app from "../../firebase.init";
-import "./Home.css";
 
 const auth = getAuth(app);
-
-const Home = () => {
+const Products = () => {
   const [user] = useAuthState(auth);
   return (
     <div>
-      <h2 className="home">This is Home</h2>
-      <p>Current user is : {user ? user.displayName : "Nobody"}</p>
+      <h2>Knock Knock ! Who is there ?</h2>
+      <h5>{user ? user.displayName : "Bhoot"}</h5>
     </div>
   );
 };
 
-export default Home;
+export default Products;
